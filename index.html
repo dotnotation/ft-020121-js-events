@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>JS Events</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="src/index.js"></script>
+    </head>
+
+    <body>
+        <div id="main">
+            <h1 class="text-right">JS EVENTS</h1>
+            <h2>Comments</h2>
+
+            <!-- COMMENT FORM -->
+            <form id='comment-form'>
+                <div class="field">
+                    <input id='new-comment' type='text' placeholder='New Comment' />
+                    <input type='submit' class='btn' value="Submit" />
+                </div>
+            </form>
+
+            <!-- COMMENTS -->
+            <div id="comments-container"></div>
+
+            <!-- BUTTONS TO SHOW EVENT DELEGATION -->
+            <div id="helicopter-parent">
+                <div>
+                    <br>
+                    <div>
+                        <br>
+                        <div>
+                            <p>EVENT DELEGATION</p>
+                            <div>
+                                <button class="btn alert" data-name="alert">Alert ME</button>
+                                <button class="btn log" data-name="log">Console Log something</button>
+                                <button class="btn error" data-name="error">Console Error</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,111 @@
+html {
+    background: rgba(61, 61, 187, 0.735);
+    background-size: 600% 600%;
+    background-attachment: fixed;
+    height: 100%;
+    min-height: 100%;
+}
+
+html * {
+    font-family: sans-serif !important;
+}
+  
+#main {
+    margin: 25px auto;
+    padding: 20px;
+    width: 500px;
+    height: auto;
+    background-color: rgb(245, 245, 250);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+  
+.comment {
+    width: 100%;
+    display: grid;
+}
+  
+.field {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+  
+.btn {
+    background-color: white;
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid rgb(40, 160, 230);
+    color: rgb(40, 160, 230);
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: rgb(230, 240, 250);
+}
+  
+input[type="text"] {
+    padding: 10px 20px;
+    border-radius: 5px 0px 0px 5px;
+    border: 1px solid rgb(220, 225, 230);
+    font-size: 20px;
+}
+  
+input:focus {
+    outline: none;
+}
+
+.trash {
+    color: red;
+}
+
+p, span {
+    font-size: 20px;
+    margin: 5px;
+}
+
+.text-right {
+    text-align: right;
+    margin-right: 30px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.btn.error {
+    background-color: white;
+    border: 1px solid rgb(203, 0, 0);
+    color: rgb(203, 0, 0);
+}
+
+.btn.log {
+    background-color: white;
+    border: 1px solid rgb(255, 101, 5);
+    color: rgb(255, 101, 5);
+}
+
+.btn.alert {
+    background-color: white;
+    border: 1px solid rgb(0, 0, 164);
+    color: rgb(0, 0, 164);
+}
+
+.btn.error:hover {
+    background-color: rgb(203, 0, 0);
+    color: white;
+}
+
+.btn.log:hover {
+    background-color: rgb(255, 101, 5);
+    color: white;
+}
+
+.btn.alert:hover {
+    background-color: rgb(0, 0, 164);
+    color: white;
+}
