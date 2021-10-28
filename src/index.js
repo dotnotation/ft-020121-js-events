@@ -1,9 +1,22 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", (event) {
     // const form = document.querySelector('form');
     const form = document.getElementById('comment-form');
     console.log(form);
 
-    form.addEventListener("submit", handleSubmit);
+    form.addEventListener("submit", (event) => {
+    // grabbing the form and adding an Event Listener
+    // VERY IMPORTANT THAT YOU GRAB THE FORM NOT THE BUTTON for this event listener
+    
+        event.preventDefault();
+// prevents the page from reloading when you hit submit/ stops a get or post from happening 
+        console.log(event);
+        const input = event.target[0]
+// finding where the user submitted thing is going
+        const comment = input.value;
+// showing the value of the input
+        console.log(input);
+        console.log(comment);
+    })
 
     addClickToButtons();
     addClickMeButton();
