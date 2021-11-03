@@ -1,3 +1,6 @@
+let editMode = false;
+// after editing, the button will continue to say edit and edit the same comment so this sets the default mode to not be edit so the submit button will return to normal
+
 document.addEventListener("DOMContentLoaded", function() {
     // const form = document.querySelector('form'); This will just grab the first form on the page
     const form = document.getElementById('comment-form');
@@ -23,7 +26,18 @@ function handleSubmit(event) {
     // const comment  = input.value;
     // showing the value of the input 
     const commentInput = document.getElementById("new-comment");
-    addComment(commentInput.value);
+    if (!!editMode){
+        editMode.children[0].innerText = commentInput.value 
+        // if editMode is true we are grabbing the child we are editing and updating the value of that div
+        document.getElementById('submit-comment').value = "Submit";
+        // grab edit button since we are in edit mode and want to switch the button back to submit
+        editMode = false;
+        // we want to set edit mode back to false so the button and the comment go back to normal
+    } else {
+        addComment(commentInput.value);
+        // else do things normally
+    }
+    // addComment(commentInput.value);
     commentInput.value = "";
     // clearing out the input field after something is submitted
 }
@@ -78,6 +92,7 @@ function handleEditButton(event) {
     submitBtn.value = "Edit";
     // change the submit button's value to Edit 
     // however it will stay as edit currently 
+    editMode = commentDiv; 
 
 }
 
