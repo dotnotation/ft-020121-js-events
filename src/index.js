@@ -38,18 +38,22 @@ function addComment(comment) {
     const commentSpan = document.createElement('span');
     const frownyFace = document.createElement('span');
     const space = document.createElement('br');
+    const editButton = document.createElement('button');
 
     commentSpan.innerText = comment;
     frownyFace.innerHTML = "    &#9785;";
     frownyFace.className = "trash";
     // from CSS file which will turn it red
+    editButton.innerText = "Edit me"
+
+    editButton.addEventListener("click", handleEditButton);
 
     frownyFace.addEventListener("click", (event) => {
         event.target.parentElement.remove();
         // removing the parent (commentDiv) which is easier than removing all the individual children
     })
     
-    commentDiv.append(commentSpan, frownyFace, space);
+    commentDiv.append(commentSpan, editButton, frownyFace, space);
     // adding to each individual comment a span element with the text, a frowny face, and a break
     commentsDiv.append(commentDiv);
     // adding to the entire comment section an individual comment div
@@ -57,6 +61,25 @@ function addComment(comment) {
     // possible security issue
     // commentsDiv.innerHTML += `<span>${comment}</span><br>`
 } 
+
+function handleEditButton(event) {
+    // there will be many edit buttons so we should know which button it is which is why we are passing in event
+    const commentDiv = event.target.parentElement;
+    // parentElement will get you the parent div
+    // we want to grab the text put it in the input field and change the submit button and then change the text that renders in the div
+    let comment = commentDiv.children[0].innerText;
+    // grab the individual comment div
+    const submitBtn = document.getElementById('submit-comment');
+    // grab the submit button
+    const input = document.getElementById('new-comment');
+    // get the text input 
+    input.value = comment;
+    // change the value of the text input to the comment we are editing
+    submitBtn.value = "Edit";
+    // change the submit button's value to Edit 
+    // however it will stay as edit currently 
+
+}
 
 function addClickToButtons() {
     // as a JS developer you want to make sure that you don't add too many events as that will slow things down, so that is why all these events are put into one event function
